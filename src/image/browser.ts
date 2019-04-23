@@ -1,5 +1,5 @@
 /* eslint-env browser */
-import { Options, ImageData, ImageSource, ImageCallback } from '../typing'
+import { Options, ImageSource, ImageCallback } from '../typing'
 import { ImageBase } from './base'
 import * as Url from 'url'
 
@@ -78,7 +78,7 @@ export default class BrowserImage extends ImageBase {
     this._context.clearRect(0, 0, this._width, this._height)
   }
   update (imageData: ImageData): void {
-    this._context.putImageData(<ImageData>imageData, 0, 0)
+    this._context.putImageData(imageData, 0, 0)
   }
   getWidth (): number {
     return this._width

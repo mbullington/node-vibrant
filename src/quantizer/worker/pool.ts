@@ -121,7 +121,7 @@ export default class WorkerPool {
     // Resolve or reject deferred promise
     switch (data.type) {
       case 'return':
-        task.deferred.resolve(data.payload.map(({ rgb, population }) => new Swatch(rgb, population)))
+        task.deferred.resolve(data.payload.map((swatch: any) => new Swatch(swatch._rgb, swatch._population)))
         break
       case 'error':
         task.deferred.reject(new Error(data.payload))
